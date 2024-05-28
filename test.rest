@@ -1,0 +1,91 @@
+###
+GET http://localhost:13000/setup
+###
+
+###
+GET http://localhost:13000/client
+###
+
+###
+GET http://localhost:13000/laboratory
+###
+
+###
+GET http://localhost:13000/announcement
+###
+
+###
+POST http://localhost:13000/client
+Content-Type: application/json
+
+{
+    "client": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "phone_number": "123456789",
+        "age": 30,
+        "gender": "male",
+        "address": {
+            "street": "123 Main St",
+            "city": "Anytown",
+            "postal_code": "12345",
+            "country": "USA"
+        },
+        "education_level": "Bachelor's Degree",
+        "native_language": "English"
+    }
+}
+###
+
+###
+POST http://localhost:13000/laboratory
+Content-Type: application/json
+
+{
+    "laboratory": {
+        "company_name": "XYZ Labs",
+        "email": "info@xyzlabs.com",
+        "phone_number": "987654321",
+        "address": {
+            "street": "456 Elm St",
+            "city": "Othertown",
+            "postal_code": "54321",
+            "country": "USA"
+        },
+        "activity_type": "Research",
+        "activity_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "announcements": []
+    }
+}
+###
+
+###
+POST http://localhost:13000/announcement
+Content-Type: application/json
+
+{
+    "announcement": {
+        "laboratory_id": 1,
+        "experience_name": "Clinical Trial",
+        "remuneration": "1000 USD",
+        "experience_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "patient_characteristics": {
+            "gender": "male",
+            "age_range": {
+                "min": 25,
+                "max": 50
+            },
+            "education_level": "Master's Degree",
+            "native_language": "English"
+        },
+        "address": {
+            "street": "789 Oak St",
+            "city": "Another town",
+            "postal_code": "67890",
+            "country": "USA"
+        },
+        "experience_days": 10,
+        "duration": "2 weeks"
+    }
+}
